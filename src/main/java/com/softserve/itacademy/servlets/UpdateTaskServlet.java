@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 @WebServlet("/update-task")
-public class UpdateUserServlet extends HttpServlet {
+public class UpdateTaskServlet extends HttpServlet {
     private TaskDAO taskDao;
     private int taskId;
     private Task task;
@@ -25,8 +25,13 @@ public class UpdateUserServlet extends HttpServlet {
         taskId = Integer.parseInt( request.getParameter( "id" ) );
         task = taskDao.viewInfo(taskId);
         request.setAttribute( "task", task );
-        request.getRequestDispatcher("/WEB-INF/update-task.jsp").forward(request, response);
-    }
+        try {
+            request.getRequestDispatcher("/WEB-INF/update-task.jsp").forward(request, response);
+        }catch ( Exception e){
+            throw new ServletException(e);
+
+        }
+        }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        task.setName( request.getParameter( "name" ) );
