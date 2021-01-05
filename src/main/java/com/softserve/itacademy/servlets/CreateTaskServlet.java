@@ -36,12 +36,5 @@ public class CreateTaskServlet extends HttpServlet {
         Priority priority = Priority.valueOf(request.getParameter("priority"));
         Task task = new Task(name, priority);
 
-            if(taskDao.showAll().stream().filter( task1 -> task1.getName().equals( name )).findAny().isPresent()) {
-
-                response.sendRedirect("/create-task");
-            }else {
-                taskDao.create( task );
-                response.sendRedirect( "/tasks-list" );
-            }
     }
 }

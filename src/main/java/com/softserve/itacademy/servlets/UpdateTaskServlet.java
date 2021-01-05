@@ -28,7 +28,7 @@ public class UpdateTaskServlet extends HttpServlet {
         try {
             request.getRequestDispatcher("/WEB-INF/update-task.jsp").forward(request, response);
         }catch ( Exception e){
-            throw new ServletException(e);
+            throw new ServletException("Task with ID '" + taskId + "' not found in To-Do List!");
 
         }
     }
