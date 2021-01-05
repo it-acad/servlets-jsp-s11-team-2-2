@@ -20,7 +20,7 @@ public class ReadTaskServlet extends HttpServlet {
     }
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        Task task =  taskDao.viewInfo( Integer.parseInt( request.getParameter( "id" ) ) );
         request.setAttribute( "task", task );
         request.getRequestDispatcher("/WEB-INF/read-task.jsp").forward(request, response);
