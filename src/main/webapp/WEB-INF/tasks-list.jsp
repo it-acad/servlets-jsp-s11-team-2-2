@@ -28,7 +28,7 @@
             <a href="/update-task?id=<%=task.getId()%>">Edit</a>
         </td>
         <td>
-            <a href="/read?id=<%=task.getId()%>">Delete</a>
+            <a href="/delete-task?id=<%=task.getId()%>">Delete</a>
         </td>
     </tr>
     <%
