@@ -22,6 +22,7 @@ public class CreateTaskServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
         request.getRequestDispatcher("/WEB-INF/create-task.jsp").forward(request, response);
     }
 
@@ -34,7 +35,8 @@ public class CreateTaskServlet extends HttpServlet {
 
         Priority priority = Priority.valueOf(request.getParameter("priority"));
         Task task = new Task(name, priority);
-        taskDao.create(task);
+        taskDao.create( task );
         response.sendRedirect("/tasks-list");
+
     }
 }
