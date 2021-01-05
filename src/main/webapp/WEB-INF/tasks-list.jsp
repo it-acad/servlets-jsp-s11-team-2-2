@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Николай
-  Date: 1/5/2021
-  Time: 1:10 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page import="com.softserve.itacademy.Task" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -32,7 +25,7 @@
             <a href="/read?id=<%=task.getId()%>">Read</a>
         </td>
         <td>
-            <a href="/read?id=<%=task.getId()%>">Edit</a>
+            <a href="/update-task?id=<%=task.getId()%>">Edit</a>
         </td>
         <td>
             <a href="/read?id=<%=task.getId()%>">Delete</a>

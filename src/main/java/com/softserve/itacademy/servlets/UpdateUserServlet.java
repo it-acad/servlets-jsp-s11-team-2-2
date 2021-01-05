@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-@WebServlet("/create-task")
-public class CreateTaskServlet extends HttpServlet {
-
+@WebServlet("/update-task")
+public class UpdateUserServlet extends HttpServlet {
     private TaskDAO taskDao;
+    private int taskId;
+    private Task task;
 
     @Override
     public void init() {
@@ -22,14 +22,17 @@ public class CreateTaskServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("/WEB-INF/create-task.jsp").forward(request, response);
+        taskId = Integer.parseInt( request.getParameter( "id" ) );
+        task = taskDao.viewInfo(taskId);
+        request.setAttribute( "task", task );
+        request.getRequestDispatcher("/WEB-INF/update-task.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        Priority priority = Priority.valueOf(request.getParameter("priority"));
-        Task task = new Task(name, priority);
-        taskDao.create(task);
+       task.setName( request.getParameter( "name" ) );
+       task.setPriority( Priority.valueOf( request.getParameter( "priority" ) ) );
+       taskDao.edit( task.getId(),task );
         response.sendRedirect("/tasks-list");
+
     }
 }
