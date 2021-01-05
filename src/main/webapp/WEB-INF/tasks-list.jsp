@@ -13,7 +13,7 @@
     <title>List of Tasks</title>
 </head>
 <body>
-<a href="">Home</a> | <a href="/create-task">Add new Task</a> | <a href="/tasks-list">Show all Tasks</a>
+<a href="/home">Home</a> | <a href="/create-task">Add new Task</a> | <a href="/tasks-list">Show all Tasks</a>
 <h1>List of Tasks</h1>
 <table border = "1">
     <th>No.</th>
