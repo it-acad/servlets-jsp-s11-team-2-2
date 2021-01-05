@@ -8,11 +8,12 @@
 <h1> Info about Task</h1>
 <body>
 <%
-    Task task = (Task) request.getAttribute( "task" );
+    Task task = (Task) request.getAttribute("task");
 %>
-<p>Id: <%=task.getId()%></p>
-<p>Title: <%=task.getName()%></p>
-<p>Priority: <%=task.getPriority()%></p>
+
+<p>Id: <b><%=task.getId()%></b></p>
+<p>Title: <b><%=task.getName()%></b></p>
+<p>Priority: "<b><%=task.getPriority()%></b></p>
 
 </body>
 </html>

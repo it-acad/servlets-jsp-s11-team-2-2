@@ -8,7 +8,7 @@
 <body>
 <a href="/home">Home</a> | <a href="/create-task">Add new Task</a> | <a href="/tasks-list">Show all Tasks</a>
 <h1>List of Tasks</h1>
-<table border = "1">
+<table border="1">
     <th>No.</th>
     <th>Name</th>
     <th>Priority</th>
@@ -18,11 +18,14 @@
         for (Task task : (List<Task>) request.getAttribute("tasks")) {
     %>
     <tr>
-        <td><%=task.getId()%></td>
-        <td><%=task.getName()%></td>
-        <td><%=task.getPriority()%></td>
+        <td><%=task.getId()%>
+        </td>
+        <td><%=task.getName()%>
+        </td>
+        <td><%=task.getPriority()%>
+        </td>
         <td>
-            <a href="/read-tusk?id=<%=task.getId()%>">Read</a>
+            <a href="/read-task?id=<%=task.getId()%>">Read</a>
         </td>
         <td>
             <a href="/update-task?id=<%=task.getId()%>">Edit</a>
