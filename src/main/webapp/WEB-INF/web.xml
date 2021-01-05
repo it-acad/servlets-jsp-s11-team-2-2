@@ -9,5 +9,8 @@
   <welcome-file-list>
     <welcome-file>/WEB-INF/home.jsp</welcome-file>
   </welcome-file-list>
-
+  <error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/error.jsp</location>
+  </error-page>
 </web-app>
