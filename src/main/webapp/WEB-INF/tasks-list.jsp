@@ -22,7 +22,7 @@
         <td><%=task.getName()%></td>
         <td><%=task.getPriority()%></td>
         <td>
-            <a href="/read?id=<%=task.getId()%>">Read</a>
+            <a href="/read-tusk?id=<%=task.getId()%>">Read</a>
         </td>
         <td>
             <a href="/update-task?id=<%=task.getId()%>">Edit</a>
