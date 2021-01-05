@@ -7,7 +7,12 @@
 <h1>
 <%
    String id = request.getParameter( "id");
-   out.print( "Task with ID "+ id+" not found in To-Do List!" );
+   if(id.equals( null )) {
+       out.print( "Task with a given name already exists");
+
+   }else {
+       out.print( "Task with ID " + id + " not found in To-Do List!" );
+   }
     %>
 </h1>
 <br>
