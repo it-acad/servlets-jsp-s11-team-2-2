@@ -35,6 +35,8 @@ public class CreateTaskServlet extends HttpServlet {
 
         Priority priority = Priority.valueOf(request.getParameter("priority"));
         Task task = new Task(name, priority);
+        taskDao.create( task );
+        response.sendRedirect("/tasks-list");
 
     }
 }
