@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 @WebServlet("/delete-task")
 public class DeleteTaskServlet extends HttpServlet {
 
@@ -19,7 +20,7 @@ public class DeleteTaskServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        taskDao.delete( Integer.parseInt( request.getParameter( "id" ) ) );
+        taskDao.delete(Integer.parseInt(request.getParameter("id")));
         response.sendRedirect("/tasks-list");
     }
 

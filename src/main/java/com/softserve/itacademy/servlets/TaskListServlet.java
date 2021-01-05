@@ -22,7 +22,7 @@ public class TaskListServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/tasks-list.jsp");
-        request.setAttribute("tasks",taskDao.showAll());
+        request.setAttribute("tasks", taskDao.showAll());
         requestDispatcher.forward(request, response);
     }
 }

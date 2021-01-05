@@ -31,12 +31,12 @@ public class UpdateTaskServlet extends HttpServlet {
             throw new ServletException(e);
 
         }
-        }
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       task.setName( request.getParameter( "name" ) );
-       task.setPriority( Priority.valueOf( request.getParameter( "priority" ) ) );
-       taskDao.edit( task.getId(),task );
+        task.setName( request.getParameter( "name" ) );
+        task.setPriority( Priority.valueOf( request.getParameter( "priority" ) ) );
+        taskDao.edit( task.getId(),task );
         response.sendRedirect("/tasks-list");
 
     }

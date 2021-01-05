@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class TaskDAO {
+
     private List<Task> tasks = new LinkedList<>();
 
     private static TaskDAO taskDaoInstance = null;
@@ -16,6 +17,10 @@ public class TaskDAO {
             taskDaoInstance = new TaskDAO();
         }
         return taskDaoInstance;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
     }
 
     public boolean create(Task task) {

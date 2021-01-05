@@ -11,7 +11,7 @@
 <form action="/update-task" method="post">
 
     <%
-        Task task = (Task) request.getAttribute( "task" );
+        Task task = (Task) request.getAttribute("task");
     %>
     <table>
         <tr>
@@ -19,7 +19,7 @@
                 <label for="id">Id:</label>
             </td>
             <td>
-                <input type="text" id = "id" name = "id" value="<%=task.getId()%>" disabled>
+                <input type="text" id="id" name="id" value="<%=task.getId()%>" disabled>
             </td>
         </tr>
         <tr>
@@ -27,15 +27,15 @@
                 <label for="name">Name:</label>
             </td>
             <td>
-                <input type="text" id = "name" name = "name" value="<%=task.getName()%>">
+                <input type="text" id="name" name="name" value="<%=task.getName()%>">
             </td>
         </tr>
         <tr>
             <td>
-                <label >Priority:</label>
+                <label>Priority:</label>
             </td>
             <td>
-                <select name="priority" >
+                <select name="priority">
                     <option value="LOW">Low</option>
                     <option value="MEDIUM">Medium</option>
                     <option value="HIGH">High</option>
