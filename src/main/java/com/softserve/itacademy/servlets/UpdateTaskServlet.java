@@ -28,16 +28,14 @@ public class UpdateTaskServlet extends HttpServlet {
         try {
             request.getRequestDispatcher("/WEB-INF/update-task.jsp").forward(request, response);
         }catch ( Exception e){
-            throw new ServletException(e);
+            throw new ServletException("Task with ID '" + taskId + "' not found in To-Do List!");
 
         }
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         task.setName( request.getParameter( "name" ) );
         task.setPriority( Priority.valueOf( request.getParameter( "priority" ) ) );
         taskDao.edit( task.getId(),task );
         response.sendRedirect("/tasks-list");
-
     }
 }
