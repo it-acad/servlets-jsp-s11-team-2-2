@@ -1,4 +1,8 @@
-package com.softserve.itacademy;
+package com.softserve.itacademy.servlets;
+
+import com.softserve.itacademy.Priority;
+import com.softserve.itacademy.Task;
+import com.softserve.itacademy.TaskDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,4 +1,6 @@
-package com.softserve.itacademy;
+package com.softserve.itacademy.servlets;
+
+import com.softserve.itacademy.TaskDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
